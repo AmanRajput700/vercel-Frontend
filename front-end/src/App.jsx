@@ -1,6 +1,6 @@
 import axios from 'axios';
 import NavBar from './Components/Navbar/NavBar';
-import CardContainer from './Components/cards/cardContainer';
+import CardContainer from './Components/cards/CardContainer';
 import Collection from './Components/collections/Collection';
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import Login from './Components/User/Login';
