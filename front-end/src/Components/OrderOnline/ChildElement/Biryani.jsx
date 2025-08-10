@@ -8,7 +8,7 @@ const Biryani = () => {
       const [items, setItems] = useState([]); 
     
       useEffect(() => {
-        axios.get("http://localhost:8080/biryani")
+        axios.get("https://vercel-backend-qzmr.onrender.com/biryani")
           .then((res) => {
             setItems(res.data); 
           })

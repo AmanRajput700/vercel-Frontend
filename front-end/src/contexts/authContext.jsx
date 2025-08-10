@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/check-auth", { withCredentials: true })
+    axios.get("https://vercel-backend-qzmr.onrender.com/check-auth", { withCredentials: true })
       .then((res) => {
         if (res.data.isLoggedIn) {
           setIsLoggedIn(true);

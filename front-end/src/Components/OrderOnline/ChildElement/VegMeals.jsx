@@ -8,7 +8,7 @@ const VegMeals = () => {
   const [items, setItems] = useState([]); 
   
   useEffect(() => {
-    axios.get("http://localhost:8080/veg-meals")
+    axios.get("https://vercel-backend-qzmr.onrender.com/veg-meals")
       .then((res) => {
         setItems(res.data); 
       })

@@ -7,7 +7,7 @@ const Burger = () => {
     const [items, setItems] = useState([]); 
   
     useEffect(() => {
-      axios.get("http://localhost:8080/burger")
+      axios.get("https://vercel-backend-qzmr.onrender.com/burger")
         .then((res) => {
           setItems(res.data); 
         })

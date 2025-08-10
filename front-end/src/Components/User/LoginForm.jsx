@@ -16,7 +16,7 @@ const LoginForm = () => {
 
   function onSubmit(data) {
     axios
-      .post('http://localhost:8080/login', data, { withCredentials: true })
+      .post('https://vercel-backend-qzmr.onrender.com/login', data, { withCredentials: true })
       .then((res) => {
         setIsLoggedIn(true);
         setUser(res.data.user);

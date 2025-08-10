@@ -8,7 +8,7 @@ const FriedRice = () => {
   const [items, setItems] = useState([]); 
   
     useEffect(() => {
-      axios.get("http://localhost:8080/fried-rice")
+      axios.get("https://vercel-backend-qzmr.onrender.com/fried-rice")
         .then((res) => {
           setItems(res.data); 
         })

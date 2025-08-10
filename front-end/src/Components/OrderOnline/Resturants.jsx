@@ -7,7 +7,7 @@ const Resturants = () => {
   const [restaurants, setRestaurants] = useState([]); 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/restaurants")
+    axios.get("https://vercel-backend-qzmr.onrender.com/api/restaurants")
       .then((res) => {
         setRestaurants(res.data); 
       })

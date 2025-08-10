@@ -8,7 +8,7 @@ const Thali = () => {
   const [items, setItems] = useState([]); 
   
     useEffect(() => {
-      axios.get("http://localhost:8080/thali")
+      axios.get("https://vercel-backend-qzmr.onrender.com/thali")
         .then((res) => {
           setItems(res.data); 
         })

@@ -8,7 +8,7 @@ const Dosa = () => {
   const [items, setItems] = useState([]); 
   
     useEffect(() => {
-      axios.get("http://localhost:8080/dosa")
+      axios.get("https://vercel-backend-qzmr.onrender.com/dosa")
         .then((res) => {
           setItems(res.data); 
         })

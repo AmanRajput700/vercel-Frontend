@@ -13,7 +13,7 @@ export default function RestaurantMenu() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`http://localhost:8080/api/restaurants/${id}`);
+      const res = await axios.get(`https://vercel-backend-qzmr.onrender.com/http://localhost:8080/api/restaurants/${id}`);
       setRestaurant(res.data.restaurant);
       setMenuItems(res.data.menuItems);
     };

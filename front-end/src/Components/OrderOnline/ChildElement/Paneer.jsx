@@ -8,7 +8,7 @@ const Paneer = () => {
   const [items, setItems] = useState([]); 
   
     useEffect(() => {
-      axios.get("http://localhost:8080/paneer")
+      axios.get("https://vercel-backend-qzmr.onrender.com/paneer")
         .then((res) => {
           setItems(res.data); 
         })

@@ -6,7 +6,7 @@ const LogOut = ()=>{
     const { setIsLoggedIn,setUser} = useContext(AuthContext); 
 
     function handleLogout(){
-        axios.post('http://localhost:8080/logout', {}, { withCredentials: true })
+        axios.post('https://vercel-backend-qzmr.onrender.com/logout', {}, { withCredentials: true })
         .then(() => {
             setIsLoggedIn(false);
             setUser(null);

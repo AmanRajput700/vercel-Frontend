@@ -14,7 +14,7 @@ const SignUp = () => {
 
   function onSubmit(data) {
     axios
-      .post('http://localhost:8080/register', data)
+      .post('https://vercel-backend-qzmr.onrender.com/register', data)
       .then((res) => {
         console.log(res.data);
         setisOpen(false);

@@ -8,7 +8,7 @@ const Cake = () => {
   const [items, setItems] = useState([]); 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/cake")
+    axios.get("https://vercel-backend-qzmr.onrender.com/cake")
       .then((res) => {
         setItems(res.data); 
       })
