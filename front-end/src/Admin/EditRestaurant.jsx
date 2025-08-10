@@ -19,7 +19,7 @@ const EditRestaurants = () => {
   useEffect(() => {
     if (user.id) {
       axios
-        .get(`http://localhost:8080/myrestaurants/${user.id}`)
+        .get(`https://vercel-backend-qzmr.onrender.com/myrestaurants/${user.id}`)
         .then((res) => setRestaurants(res.data))
         .catch((err) => console.log(err));
     }
@@ -44,7 +44,7 @@ const EditRestaurants = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:8080/restaurants/${editingRestaurant._id}`,
+        `https://vercel-backend-qzmr.onrender.com/${editingRestaurant._id}`,
         { ...formData, userId: user.id }
       );
 
@@ -60,7 +60,7 @@ const EditRestaurants = () => {
 
   const handleDelete = async (restaurantId) => {
     try {
-      await axios.delete(`http://localhost:8080/${restaurantId}/${user.id}`);
+      await axios.delete(`https://vercel-backend-qzmr.onrender.com/${restaurantId}/${user.id}`);
       setRestaurants(restaurants.filter((rest) => rest._id !== restaurantId));
     } catch (err) {
       console.error("Error deleting restaurant:", err);

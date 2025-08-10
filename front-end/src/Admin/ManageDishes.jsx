@@ -17,7 +17,7 @@ const ManageDishes = () => {
   // Fetch dishes for this restaurant
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/restaurants/${id}`)
+      .get(`https://vercel-backend-qzmr.onrender.com/${id}`)
       .then(res => setDishes(res.data.menuItems))
       .catch(err => console.error("Error fetching dishes:", err));
   }, [id]);

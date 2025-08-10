@@ -13,7 +13,7 @@ export default function RestaurantMenu() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(`https://vercel-backend-qzmr.onrender.com/http://localhost:8080/api/restaurants/${id}`);
+      const res = await axios.get(`https://vercel-backend-qzmr.onrender.com/api/restaurants/${id}`);
       setRestaurant(res.data.restaurant);
       setMenuItems(res.data.menuItems);
     };
@@ -24,21 +24,37 @@ export default function RestaurantMenu() {
 
   return (
     <div>
-      <MainNav/>
-    <div className='w-full sm:w-[80%] md:w-[70%] lg:w-[60%]  mx-auto mt-8'>
-        <div>
-            <h1 className='font-[Poppins] font-bold text-2xl p-2'>{restaurant.name}</h1>
-            <hr className='bg-gray-400 h-[1px] border-none'/>
-        </div>
-        
-        <ResturantDetails rating={restaurant.rating_star} totalRatings={restaurant.rating_count} priceForTwo={restaurant.price_for_two}  categories={restaurant.knownFor} outlet={restaurant.location} deliveryTime={restaurant.delivery_time}/>
-        
-    </div>
-      <div className='w-full sm:w-[80%] md:w-[70%] lg:w-[60%]  mx-auto mt-8'>
-        {menuItems.map(item => (
-            <Dish title={item.title} price={item.price} rating_star={item.rating_star} rating_count={item.rating_count} description={item.description} image={item.image}/>
-        ))}
-      </div>
-    </div>
+  <MainNav />
+  
+  {/* Restaurant Info */}
+  <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto mt-8 px-4 sm:px-0">
+    <h1 className="font-[Poppins] font-bold text-2xl p-2">{restaurant.name}</h1>
+    <hr className="bg-gray-400 h-[1px] border-none" />
+    <ResturantDetails
+      rating={restaurant.rating_star}
+      totalRatings={restaurant.rating_count}
+      priceForTwo={restaurant.price_for_two}
+      categories={restaurant.knownFor}
+      outlet={restaurant.location}
+      deliveryTime={restaurant.delivery_time}
+    />
+  </div>
+
+  {/* Menu Items */}
+  <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto mt-8 space-y-6 px-4 sm:px-0">
+    {menuItems.map(item => (
+      <Dish
+        key={item._id}
+        title={item.title}
+        price={item.price}
+        rating_star={item.rating_star}
+        rating_count={item.rating_count}
+        description={item.description}
+        image={item.image}
+      />
+    ))}
+  </div>
+</div>
+
   );
 }

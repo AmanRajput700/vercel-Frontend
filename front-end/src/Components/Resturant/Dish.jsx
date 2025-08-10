@@ -5,16 +5,17 @@ export default function Dish({ title, price, rating_star, rating_count, image, d
   const [showFull, setShowFull] = useState(false);
 
   const toggleDescription = () => setShowFull(!showFull);
-  const truncatedDesc = description.length > 80 ? description.slice(0, 80) + "..." : description;
+  const truncatedDesc =
+    description.length > 80 ? description.slice(0, 80) + "..." : description;
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-start gap-4 py-4 border-b border-gray-200">
+    <div className="flex flex-row justify-between items-start gap-4 py-4 border-b border-gray-200">
       
       {/* Text Info */}
       <div className="flex flex-col flex-1 space-y-2">
-        <h2 className="text-lg sm:text-xl font-semibold text-gray-800">{title}</h2>
+        <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         <p className="text-base font-bold text-green-700">&#8377;{price}</p>
-        
+
         <div className="text-sm text-gray-600">
           <i className="fa-solid fa-star text-yellow-500 mr-1"></i>
           <span className="font-medium text-gray-800">{rating_star}</span>
@@ -35,7 +36,7 @@ export default function Dish({ title, price, rating_star, rating_count, image, d
       </div>
 
       {/* Image and Add Button */}
-      <div className="relative w-full sm:w-40 flex-shrink-0">
+      <div className="relative w-40 flex-shrink-0">
         <img
           src={image}
           alt={title}

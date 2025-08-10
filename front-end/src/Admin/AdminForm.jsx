@@ -28,7 +28,7 @@ function AddRestaurantForm() {
     }
 
     try {
-      await axios.post('http://localhost:8080/api/restaurants', {
+      await axios.post('https://vercel-backend-qzmr.onrender.com/api/restaurants', {
         ...formData,
         userId: user.id,
       }, { withCredentials: true });

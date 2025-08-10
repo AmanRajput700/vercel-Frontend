@@ -35,8 +35,7 @@ import AdminPanel from './Components/AdminPanel/AdminPanel';
 import RestaurantMenu from './Pages/RestaurantMenu';
 import ManageDishes from './Admin/ManageDishes';
 
-const cors = require("cors");
-app.use(cors({ origin: "https://your-frontend.vercel.app", credentials: true }));
+
 
 const router = createBrowserRouter(
   [
