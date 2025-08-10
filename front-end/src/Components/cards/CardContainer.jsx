@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './card'
+import Card from './Card'
 const CardContainer = () => {
   return (
     <div className='flex max-sm:flex-wrap  w-[90%] sm:w-[90%] md:w-[80%] justify-between mt-12 gap-3 sm:gap-10 mx-auto'>
